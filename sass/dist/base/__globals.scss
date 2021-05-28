@@ -1,0 +1,9 @@
+
+.container{
+    max-width: 1154px;
+    margin: auto;
+    padding: 0px 24px;
+    @include max(768px){
+        position: relative;
+    }
+}

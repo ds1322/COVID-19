@@ -1,0 +1,120 @@
+.mobile__menu{
+    margin-top: -5px;
+    cursor: pointer;
+    @include min(769px){
+        display: none;
+    }
+    .hamburger::before{
+        content: "";
+        display: block;
+        height: 2px;
+        width: 32px;
+        background: #fff;
+        box-shadow: 0px 8px 0px #fff;
+    }
+    .hamburger::after{
+        content: "";
+        display: block;
+        height: 2px;
+        width: 32px;
+        margin-top: 14px;
+        background: #fff;
+    }
+}
+
+.open{
+        .hamburger::before{
+            transform: translate(0px,6px) rotate(45deg);
+            transition: 0.4s ease-in-out;
+            box-shadow: none;
+        }
+        .hamburger::after{
+            transform: translate(-1px,-10px) rotate(-45deg);
+            transition: 0.4s ease-in-out;
+            // height: 2px;
+        }
+    }
+.close{
+    .hamburger{
+        transform: rotateX(180deg);
+        transition: 0.3s;
+    }
+    .hamburger::before{
+        transform: translate(0px) rotate(0deg);
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger::after{
+        transform: translate(0px) rotate(0deg);
+        transition: 0.3s ease-in-out;
+    }
+}
+
+// ******************* Mobile-nav ************************* \\
+.mobile{
+    background: #fff;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    margin: 0px 24px;
+    z-index: 500;
+    text-align: center;
+    font-family: $overpass;
+    border-radius: 8px;
+    padding: 0px 24px;
+    padding-top: 20px;
+    visibility: hidden;
+    box-shadow: 1.5px 1.5px 8px rgba(0, 0, 0, 0.74);
+    @include min(769px){
+        display: none;
+    }
+    .mobileitem{
+        @include flex(row,center,center);
+        span{
+            margin-left: 7.1px;
+        }
+    }  
+    .mobilelink{
+        background: $Grayish-blue;
+        margin: 5px 0px;
+        padding: 10px 0px;
+        border-radius: 10px;
+        visibility: hidden;
+        a{
+            display: block;
+            color: $Very-darkgrayish-blue;
+            line-height: 0;
+        }
+    }
+    
+    .border-btm{
+        border-bottom: 1px solid $Grayish-blue;
+    }
+
+    
+    .mobile__btn{
+        padding: 30px 0px;
+        @include flex(column,center,center);
+        .login-mobile{
+            padding-bottom: 17px;
+            a{
+                color: $Very-darkblack-blue;
+            }
+        }
+        .signup-mobile{
+            background: linear-gradient(to right,$Very-light-red,$Light-red);
+            padding: 10px 32px;
+            border-radius: 50px;
+            a{
+                color: #fff;
+            }
+        }
+    }
+}
+// ************************************************************ \\
+
+.no__scroll{
+    @include max(768px){
+        overflow: hidden;
+    }
+}
