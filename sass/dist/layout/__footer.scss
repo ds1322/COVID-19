@@ -1,0 +1,164 @@
+.footer{
+    background: $Very-darkblack-blue;
+    padding-top: 72px;
+    padding-bottom: 66px;
+    border-radius: 0 100px 0 0;
+    @include max(768px){
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    &__grid{
+        margin-left: -2px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 22px;
+        @include max(768px){
+            grid-template-columns: auto;
+        }
+        .grid__item{
+            &:not(:first-child){
+                margin-top: 8px;
+                margin-right: 18px;
+                @include max(768px){
+                    margin-top: 40px;
+                }
+            }
+            p{
+                color: $White;
+                font-family: $ubuntu;
+                font-size: 0.9rem;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                padding-bottom: 38px;
+                @include max(768px){
+                    padding-bottom: 25px;
+                }
+            }
+            .links{
+                @include max(768px){
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                a{
+                    font-size: 0.9rem;
+                    letter-spacing: 0.4px;
+                    display: block;
+                    flex-direction: column;
+                    margin-bottom: 13px;
+                    color: $White;
+                    font-family: $overpass;
+                    position: relative;
+                    max-width: 3rem;
+                    @include max(768px){
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    &::after{
+                        content: "";
+                        display: block;
+                        border-bottom: 1px solid $White;
+                        width: 70%;
+                        position: absolute;
+                        top: 15px;
+                        transform: scaleX(0);
+                        transition: 0.3s ease-in-out;
+                    }
+                    &:hover::after{
+                        transform: scaleX(1);
+                    }
+
+                }
+            }
+            .foot-logo:focus{
+                outline: 2px dotted $White;
+                outline-offset: 0.35rem;
+            }
+        }
+    }
+}
+
+
+// ******************************* Attribution *********************************************** \\
+.naming{
+    height: 69px;
+    width: 68px;
+    background: url(/images/nik-web12.jpg);
+    background-size: cover;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+    // box-shadow: 
+    transition: 0.2s ease-in;
+    z-index: 250;
+    @include max(768px){
+        bottom: 30px;
+        right: 30px;
+        height: 48px;
+        width: 48px;
+    }
+}
+
+.clickIn{
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+// ******************************* Attribution-desktop *************************************** \\
+.attribution{
+    visibility: hidden;
+    font-family: $overpass;
+    position: fixed;
+    bottom: 110px;
+    right: 120px;
+    padding: 40px 20px;
+    background: linear-gradient(to right,$Very-light-red,$Light-red);
+    border-radius: 50px 50px 0 50px;
+    // border: 5px ridge #fff;
+    @include max(768px){
+        display: none;
+    }
+    p{
+        color: $White;
+        max-width: 15rem;
+        line-height: 1.6;
+        a{
+            text-decoration: double;
+            color: $White;
+        }
+    }
+}
+// ******************************* Attribution-mobile ************************************** \\
+.attribution-mobile{
+    position: fixed;
+    top: 30%;
+    left: 20px;
+    right: 20px;
+    line-height: 1.7;
+    border-radius: 20px;
+    max-width: 300px;
+    margin: auto;
+    visibility: hidden;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.74);
+    p{
+        border-radius: 20px;
+        padding: 40px 20px;
+        background: $White;
+        color: $Very-darkgray-blue;
+        font-size: 1.1rem;
+        font-family: $overpass;
+        a{
+            font-weight: bold;
+            color: $Light-red;
+        }
+    }
+    @include min(769px){
+        display: none;
+    }
+}
+// ***************************************************************************************** \\

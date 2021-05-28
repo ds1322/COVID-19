@@ -1,0 +1,207 @@
+
+
+
+// ************************* Mobile-menu ************************** \\
+.show{
+    visibility: visible;
+    animation: show 0.45s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.hide{
+    visibility: visible;
+    animation: hide 0.7s ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+ 
+@keyframes hide {
+    from{
+        opacity: 1;
+        transform: scaleX(1) rotate(0deg);
+    }
+    to{
+        opacity: 0;
+        transform: scaleX(0) rotate(180deg);
+    }
+}
+// ********************************************************************** \\
+
+// ************************ Mobile-link ********************************** \\
+.mobile-link-open{
+    .mobileitem{
+        span{
+            img{
+                transform: rotate(180deg);
+                transition: 0.5s;
+            }
+        }
+    }
+    .mobilelink{
+        visibility: visible;
+        a{
+            animation: linkOpen 0.5s ease-in-out forwards;
+        }
+    }
+}
+
+.mobile-link-close{
+    visibility: visible;
+    .mobileitem{
+        span{
+            img{
+                transform: rotate(0deg);
+                transition: 0.5s;
+            }
+        }
+    }
+    .mobilelink{
+        animation: up 0.6s ease-in-out forwards;
+        a{
+            animation: linkClose 0.5s ease-in-out forwards;
+        }
+    }
+}
+@keyframes linkOpen {
+    from{
+        transform: /* translateX(-40px) */ scaleY(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        transform: /* translateY(0px) */ scaleY(1);
+    }
+}
+
+@keyframes linkClose {
+    from{
+        transform: /* translateY(0px) */ scaleY(1);
+        opacity: 1;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        visibility: visible;
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+        line-height: 0;
+        margin-bottom: 0px;
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes up {
+    from{
+        visibility: hidden;
+        transform: scaleY(1);
+    }
+    to{
+        visibility: visible;       
+        transform: scaleY(0);
+    }
+}
+// ************************************************************************* \\
+
+
+
+
+// ****************************ATTRIBUTION*********************************** \\
+
+// *************** attribution-desktop *********************** \\
+.in{
+    animation: slideIn 0.3s ease-in both;
+    animation-iteration-count: 1;
+}
+
+@keyframes slideIn {
+    from{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.out{
+    animation: slideOut 0.3s ease-in forwards;
+}
+
+@keyframes slideOut {
+    from{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(40px);
+    }   
+}
+
+
+// **************** attribution-mobile ************************ \\
+main{
+    transition: 0.3s ease-in-out;
+}
+.blur{
+    @include max(768px){
+        filter: blur(5px);
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+.mobile-name-add{
+    animation: slideDown 0.4s ease-in-out forwards;
+}
+
+.mobile-name-remove{
+    animation: slideRight 0.5s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+    from{
+        visibility: visible;
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+@keyframes slideRight {
+    from{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(40px);
+    }
+}
+// ***************************************************************************** \\

@@ -1,0 +1,120 @@
+.future{
+    overflow: hidden;
+    font-family: $overpass;
+    padding-bottom: 255px;
+    background-color: $White;
+    @include max(768px){
+        padding-bottom: 210px;
+    }
+    h2{
+        text-align: center;
+        margin-top: 153.5px;
+        font-size: 2.5rem;
+        word-spacing: -1px;
+        letter-spacing: -1.1px;
+        color: $headings;
+        @include max(768px){
+            font-size: 1.8rem;
+            margin-top: 70px;
+        }
+        @include max(340px){
+            font-size: 1.4rem;
+            margin-top: 60px;
+        }
+    }
+    .future__content{
+        color: $headings;
+        padding-top: 103px;
+        position: relative;
+        @include max(768px){
+            padding-top: 370px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        @include max(500px){
+            padding-top: 315px;
+        }
+        h3{
+            font-size: 1.75rem;
+            padding-bottom: 25.5px;
+            @include max(500px){
+                font-size: 1.5rem;
+                max-width: 15rem;
+                margin: auto;
+                padding-bottom: 15px;
+            }
+        }
+        p{
+            font-size: 0.98rem;
+            line-height: 1.8;
+            letter-spacing: 0.4px;
+            word-spacing: 1.5px;
+            max-width: 33.5rem;
+            @include max(950px){
+                max-width: 28rem;
+            }
+            @include max(850px){
+                max-width: 25rem;
+            }
+            @include max(768px){
+                max-width: 28rem;
+            }
+            @include max(500px){
+                font-size: 0.85rem;
+                max-width: 20rem;
+            }
+        }
+        .text1{
+            padding-bottom: 74px;
+            @include max(500px){
+                padding-bottom: 40px;
+            }
+        }
+    }
+    // Desktop
+    .future__img{
+        background: url(/images/illustration-editor-desktop.svg);
+        background-repeat: no-repeat;
+        // background-size: contain;
+        height: 900px;
+        width: 100%;
+        position: absolute;
+        top: -133.5px;
+        right: -623.5px;
+        @include max(1080px){
+            top: 0px;
+            background-size: contain;
+            height: 650px;
+        }
+        @include max(950px){
+            top: 50px;
+            right: -500px;
+        }
+        @include max(850px){
+            right: -400px;
+        }
+        @include max(768px){
+            display: none;
+        }
+    }
+}
+// Mobile
+.future__img-mobile{
+    background: url(/images/illustration-editor-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    @include min(769px){
+        display: none;
+    }
+    @include max(500px){
+        height: 300px;
+        width: 300px;
+    }
+}
